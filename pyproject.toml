@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "simbirsoft-assignment"
+version = "0.1.0"
+description = ""
+authors = ["uxmlen <38371923+uxmlen@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^8.2.0"
+allure-pytest = "^2.13.5"
+selenium = "^4.20.0"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
