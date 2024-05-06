@@ -11,6 +11,7 @@ from .base_page import BasePage
 class TransactionPage(BasePage):
     locators = TransactionsPageLocators()
 
+    @property
     @allure.step("Get all transactions")
     def get_all_transactions(self):
         self.element_is_visible(self.locators.BUTTON_TRANSACTIONS).click()

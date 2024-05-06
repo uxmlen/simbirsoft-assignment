@@ -1,12 +1,12 @@
 import allure
-from selenium import webdriver
+from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
-    def __init__(self, driver: webdriver.Remote, url: str):
+    def __init__(self, driver: WebDriver, url: str):
         self._driver = driver
         self._url = url
 
@@ -15,13 +15,13 @@ class BasePage:
         self._driver.get(self._url)
 
     @allure.step("Find element visible")
-    def element_is_visible(self, locator: tuple[str, str], timeout=10):
+    def element_is_visible(self, locator: tuple[str, str], timeout: int = 10):
         return WebDriverWait(self._driver, timeout).until(
             EC.visibility_of_element_located(locator)
         )
 
     @allure.step("Find elements visible")
-    def elements_are_visible(self, locator: tuple[str, str], timeout=10):
+    def elements_are_visible(self, locator: tuple[str, str], timeout: int = 10):
         return WebDriverWait(self._driver, timeout).until(
             EC.visibility_of_all_elements_located(locator)
         )

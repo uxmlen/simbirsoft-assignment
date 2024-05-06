@@ -23,12 +23,12 @@ def test_customer_login(browser):
     account_page.deposit(amount)
     account_page.withdraw(amount)
 
-    balance = account_page.get_current_balance()
+    balance = account_page.balance
     with allure.step("Check balance"):
         assert balance == 0
 
     transaction_page = TransactionPage(browser, f"{BASE_URL}/#/listTx")
-    transactions = transaction_page.get_all_transactions()
+    transactions = transaction_page.get_all_transactions
 
     with allure.step("Check amount of the transactions"):
         assert len(transactions) == 2

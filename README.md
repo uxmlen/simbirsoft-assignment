@@ -1,6 +1,6 @@
 # test assignment
 
-[link](docs/ТЗ на вакансию SDET 2024.pdf)
+[link](/docs/ТЗ на вакансию SDET 2024.pdf)
 
 ## How to run
 
@@ -33,3 +33,11 @@ pytest -sv --alluredir=results ./tests/
 ```
 allure serve results
 ```
+
+## Stack
+
+- Selenium Grid/Webdriver
+- Allure
+- Pytest
+- Poetry
+- Docker Compose
